@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shell-pilot"
+version = "0.1.0"
+description = "Agentic AI terminal assistant: danger detection, error explanation, typo correction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Amin Wafi" }]
+keywords = ["terminal", "ai", "shell", "developer-tools", "safety"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+    "anthropic>=0.25",
+    "tomli>=2.0; python_version < '3.11'",
+]
+
+[project.scripts]
+shell-pilot = "shell_pilot.cli:main"
+
+[project.urls]
+Homepage   = "https://github.com/aminwa/shell-pilot"
+Repository = "https://github.com/aminwa/shell-pilot"
+
+[tool.setuptools.packages.find]
+include = ["shell_pilot*"]
